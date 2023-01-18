@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  e2e-relay:
+    build:
+      context: ./
+    restart: always
+    volumes:
+      - ./log:/home/furqansiddiqui/e2e-relay/log
+    env_file:
+      - .env
+    ports:
+      - "${HTTP_PORT}:6000"
