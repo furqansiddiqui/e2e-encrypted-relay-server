@@ -16,10 +16,11 @@ Quickly create cluster of untraceable and disposable IP addresses that are expos
 
 Edit `.env` file to change following parameters:
 
-| Variable      | Default Value          | Description                                                                                                                                            |
-|---------------|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| HTTP_PORT     | 6001                   | Exposed HTTP port that will be used alongside instance's IP address for the client to communicate with. Suggested to use any random TCP port (<65535). |
-| SHARED_SECRET | E2E_Shared_Secret_Here | Shared secret for AES-256 encryption. This value must match with the client.                                                                           |
+| Variable      | Default Value          | Description                                                                                                                                                                              |
+|---------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| HTTP_PORT     | 6001                   | Exposed HTTP port that will be used alongside instance's IP address for the client to communicate with. Suggested to use any random TCP port (<65535).                                   |
+| SHARED_SECRET | E2E_Shared_Secret_Here | Shared secret for AES-256 encryption. This value must match with the client.                                                                                                             |
+| IP_WHITELIST  | 10.0.0.101,10.0.10.202 | List of (comma separated) IPv4 addresses that are allowed to communicate with E2E node. (Empty/no IP address provided means that clients may establish connections from any  IP address) |
 
 ### Prerequisite & Deployment
 
