@@ -12,6 +12,10 @@ RUN apt-get install -y php8.2 php8.2-fpm php8.2-curl
 
 RUN mkdir -p /run/php && touch /run/php/php8.2-fpm.sock && touch /run/php/php8.2-fpm.pid
 
+WORKDIR /root
+RUN curl -sS https://getcomposer.org/installer -o composer-setup.php
+RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
 COPY ./etc/nginx.conf /etc/nginx/nginx.template.conf
 COPY ./etc/php8.2-fpm.conf /etc/php/8.2/fpm/pool.d/www.conf
 COPY ./etc/entrypoint.sh /root/entrypoint.sh
@@ -24,7 +28,7 @@ RUN adduser --disabled-password --gecos '' -u $HOST_UID -gid $HOST_GID furqansid
 
 USER furqansiddiqui
 WORKDIR /home/furqansiddiqui/
-COPY ./src e2e-relay/www/
+COPY ./src e2e-relay/
 
 USER root
 WORKDIR /root

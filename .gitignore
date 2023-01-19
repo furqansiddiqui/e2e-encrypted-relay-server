@@ -1,2 +1,5 @@
 .idea/
 workspace/
+src/vendor/
+composer.phar
+composer.lock
