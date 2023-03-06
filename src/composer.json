@@ -2,7 +2,8 @@
   "name": "furqansiddiqui/e2e-encrypted-relay-server",
   "minimum-stability": "dev",
   "require": {
-    "furqansiddiqui/e2e-encrypted-relay-client-php": "^1.0.0"
+    "furqansiddiqui/e2e-encrypted-relay-client-php": "^1.0.1",
+    "ext-curl": "*"
   },
   "autoload": {
     "psr-4": {
